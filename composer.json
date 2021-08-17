@@ -1,0 +1,26 @@
+{
+    "name": "noem/composer-file-embed",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "biont",
+            "email": "arbelzapf@gmail.com"
+        }
+    ],
+    "require": {
+        "composer-plugin-api": "^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0"
+    },
+    "extra": {
+        "class": "FileEmbedPlugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Noem\\Composer\\": "src/"
+        }
+    }
+}
