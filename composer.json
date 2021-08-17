@@ -1,6 +1,7 @@
 {
     "name": "noem/composer-file-embed",
     "description": "description",
+    "type": "composer-plugin",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
