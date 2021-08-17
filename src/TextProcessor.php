@@ -36,6 +36,7 @@ class TextProcessor
 ```{$definition->language}
 {$embedContent}
 ```
+
 MARKDOWN;
 
         return $result;
