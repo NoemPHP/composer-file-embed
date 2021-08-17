@@ -27,19 +27,20 @@ class FileEmbedCommand extends BaseCommand
          */
         $finder = (new Finder())
             ->in($this->baseDir)
+            ->notPath('vendor')
             ->files()
             ->name('*.md')
             ->contains('/\[embedmd]:# \(/');
 
         foreach ($finder as $file) {
-            $file->getPath();
+            $output->writeln('Processing '.$file->getPathname());
+
             $matches = [];
             preg_match_all(
                 '/\[embedmd]:# \((?<definition>[^\n`]*?)\)\n(?<existing>```.*?```)?/ms',
                 $file->getContents(),
                 $matches
             );
-            print_r($matches);
             if (empty($matches) || empty($matches[0])) {
                 continue;
             }
