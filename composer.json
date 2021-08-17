@@ -15,7 +15,10 @@
         "symfony/finder": "^5.3"
     },
     "require-dev": {
-        "composer/composer": "^2.0"
+        "composer/composer": "^2.0",
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.4",
+        "nunomaduro/collision": "^5.8"
     },
     "extra": {
         "class": "Noem\\Composer\\FileEmbedPlugin"
@@ -23,6 +26,11 @@
     "autoload": {
         "psr-4": {
             "Noem\\Composer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Noem\\Composer\\Tests\\": "tests/"
         }
     }
 }

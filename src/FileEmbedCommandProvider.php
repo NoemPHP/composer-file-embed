@@ -12,7 +12,7 @@ class FileEmbedCommandProvider implements CommandProvider
     public function getCommands()
     {
         return [
-            new FileEmbedCommand(),
+            new FileEmbedCommand(getcwd()),
         ];
     }
 }
