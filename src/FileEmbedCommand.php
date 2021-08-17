@@ -27,7 +27,7 @@ class FileEmbedCommand extends BaseCommand
          */
         $finder = (new Finder())
             ->in($this->baseDir.'/**')
-            ->notPath('vendor')
+            ->exclude('vendor')
             ->files()
             ->name('*.md')
             ->contains('/\[embedmd]:# \(/');
