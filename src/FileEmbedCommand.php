@@ -26,7 +26,7 @@ class FileEmbedCommand extends BaseCommand
          * @var SplFileInfo[]
          */
         $finder = (new Finder())
-            ->in($this->baseDir)
+            ->in($this->baseDir.'/**')
             ->notPath('vendor')
             ->files()
             ->name('*.md')
