@@ -33,7 +33,12 @@ jobs:
                         composer-options: "--ignore-platform-reqs"
 
         steps:
+            -   name: "Extract branch name"
+                run: 'echo ::set-output name=branch::${GITHUB_REF#refs/heads/}'
+                id: "extract_branch"
             -   uses: "actions/checkout@v2"
+                with:
+                    -   ref: "${{ steps.extract_branch.outputs.branch }}"
             -   uses: "shivammathur/setup-php@v2"
                 with:
                     php-version: "${{ matrix.php }}"
