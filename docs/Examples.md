@@ -66,6 +66,6 @@ interface FooInterface
 ```markdown
 ## Thanks
 
-* @campoy for [campoy/embedmd](https://github.com/campoy/embedmd) which was a huge inspiration.
+* @campoy for [campoy/embed](https://github.com/campoy/embed) which was a huge inspiration.
 
 ```

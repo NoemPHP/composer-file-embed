@@ -3,7 +3,6 @@
 ## Complete
 
 [embed]:# (embedme.php php ^.*$)
-
 ```php
 <?php
 
@@ -31,7 +30,6 @@ function foo(){
 ## Existing
 
 [embed]:# (embedme.php php)
-
 ```php
 <?php
 
