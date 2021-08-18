@@ -42,7 +42,7 @@ class FileEmbedCommand extends BaseCommand
             ->contains('/\[embedmd]:# \(/');
 
         foreach ($finder as $file) {
-            $output->writeln('Processing '.$file->getPathname());
+            $output->writeln('Processing ' . $file->getPathname());
 
             $matches = [];
             preg_match_all(
@@ -64,7 +64,7 @@ class FileEmbedCommand extends BaseCommand
             try {
                 (new FileProcessor())->process($file->getPathname(), $file->getPathname(), ...$definitions);
             } catch (\Throwable $e) {
-                $output->writeln('<error>'.$e->getMessage().'</error>');
+                $output->writeln('<error>' . $e->getMessage() . '</error>');
             }
         }
     }
