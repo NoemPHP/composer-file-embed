@@ -38,7 +38,7 @@ jobs:
                 id: "extract_branch"
             -   uses: "actions/checkout@v2"
                 with:
-                    -   ref: "${{ steps.extract_branch.outputs.branch }}"
+                    ref: "${{ steps.extract_branch.outputs.branch }}"
             -   uses: "shivammathur/setup-php@v2"
                 with:
                     php-version: "${{ matrix.php }}"
