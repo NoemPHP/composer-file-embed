@@ -3,18 +3,41 @@
 
 ## Complete
 [embedmd]:# (embedme.php php ^.*$)
+```php
+<?php
 
-## Only file
+declare(strict_types=1);
+
+function foo(){
+
+}
+
+
+```## Only file
 [embedmd]:# (embedme.php)
-```
-php
-huhu
+```php
+<?php
+
+declare(strict_types=1);
+
+function foo(){
+
+}
+
+
 ```
 
 
 ## Existing
 [embedmd]:# (embedme.php php)
-```
-php
-huhu
+```php
+<?php
+
+declare(strict_types=1);
+
+function foo(){
+
+}
+
+
 ```

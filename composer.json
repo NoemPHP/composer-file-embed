@@ -18,7 +18,8 @@
         "composer/composer": "^2.0",
         "phpunit/phpunit": "^9.5",
         "mockery/mockery": "^1.4",
-        "nunomaduro/collision": "^5.8"
+        "nunomaduro/collision": "^5.8",
+        "squizlabs/php_codesniffer": "^3.6"
     },
     "extra": {
         "class": "Noem\\Composer\\FileEmbedPlugin"
@@ -32,5 +33,10 @@
         "psr-4": {
             "Noem\\Composer\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "embed-files": [
+            "\\Noem\\Composer\\FileEmbedCommand::runStatic"
+        ]
     }
 }

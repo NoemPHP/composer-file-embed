@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Noem\Composer;
 
 use Composer\Command\BaseCommand;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -16,6 +18,11 @@ class FileEmbedCommand extends BaseCommand
     public function __construct(private string $baseDir)
     {
         parent::__construct('embed-files');
+    }
+
+    public static function runStatic()
+    {
+        (new self(getcwd()))->execute(new ArrayInput([]), new ConsoleOutput());
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
