@@ -1,0 +1,26 @@
+title: Composer File Embed
+description: >-
+
+baseurl: /composer-file-embed # Your repo name with a leading slash.
+show_downloads: false
+# Aux links for the upper right navigation
+aux_links:
+    "Composer File Embed on GitHub":
+        - https://github.com/NoemPHP/composer-file-embed
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_repository: https://github.com/NoemPHP/composer-file-embed # Your repo GitHub URL
+gh_edit_branch: master # The default branch of the repo. Default: main
+gh_edit_source: docs # The directory containing the docs. Default: docs
+
+remote_theme: pmarsceill/just-the-docs
+
+
+plugins:
+    - jekyll-remote-theme
+    - jekyll-seo-tag
+    - jekyll-sitemap
+    - jemoji
+
+permalink: pretty
+theme: just-the-docs
