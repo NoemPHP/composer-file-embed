@@ -30,7 +30,7 @@ class TextProcessor
         $embedContent = file_get_contents($this->baseDir.$definition->file);
         $matches = [];
         preg_match($definition->pattern.'ms', $embedContent, $matches);
-        $embedContent=$matches[0];
+        $embedContent = $matches[0];
         $result = <<<MARKDOWN
 [embedmd]:# ({$definition->definition})
 ```{$definition->language}
