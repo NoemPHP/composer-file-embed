@@ -8,7 +8,6 @@ prevent them from disappearing in the generated document as well as to prevent t
 `(./embed/FooInterface.php)`
 
 [embed]:# (./embed/FooInterface.php)
-
 ```php
 <?php
 
@@ -48,7 +47,6 @@ interface FooInterface
 `(./embed/FooInterface.php php interface.*})`
 
 [embed]:# (./embed/FooInterface.php php interface.*})
-
 ```php
 interface FooInterface
 {
@@ -65,7 +63,6 @@ interface FooInterface
 `(./README.md markdown ##\sThanks.*$)`
 
 [embed]:# (./README.md markdown ##\sThanks.*$)
-
 ```markdown
 ## Thanks
 
