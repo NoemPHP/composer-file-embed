@@ -1,13 +1,13 @@
 # Examples
 
-Note: The `[embedmd]:#`-prefix is omitted in the following examples, showing only the actual embed definition. This is
-to prevent them from disappearing in the generated document as well as to prevent triggering duplicate embeds.
+Note: The `[embed]:#`-prefix is omitted in the following examples, showing only the actual embed definition. This is to
+prevent them from disappearing in the generated document as well as to prevent triggering duplicate embeds.
 
 ### Include a full php file with automatic syntax highlighting
 
 `(./embed/FooInterface.php)`
 
-[embedmd]:# (./embed/FooInterface.php)
+[embed]:# (./embed/FooInterface.php)
 
 ```php
 <?php
@@ -47,7 +47,7 @@ interface FooInterface
 
 `(./embed/FooInterface.php php interface.*})`
 
-[embedmd]:# (./embed/FooInterface.php php interface.*})
+[embed]:# (./embed/FooInterface.php php interface.*})
 
 ```php
 interface FooInterface
@@ -64,7 +64,7 @@ interface FooInterface
 
 `(./README.md markdown ##\sThanks.*$)`
 
-[embedmd]:# (./README.md markdown ##\sThanks.*$)
+[embed]:# (./README.md markdown ##\sThanks.*$)
 
 ```markdown
 ## Thanks

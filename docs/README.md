@@ -16,7 +16,7 @@ define embeds without these definitions showing up in the generated output. The 
 **Embed a complete file by only specifying the file path**
 
 ```markdown
-[embedmd]:# (pathOrURL language)
+[embed]:# (pathOrURL language)
 ```
 
 The language used for syntax highlighting will be chosen based on the file extension
@@ -24,7 +24,7 @@ The language used for syntax highlighting will be chosen based on the file exten
 **Full example - with language and regex pattern**
 
 ```markdown
-[embedmd]:# (pathOrURL language /match regexp/)
+[embed]:# (pathOrURL language /match regexp/)
 ```
 
 Only the part of the file that matches the given pattern will be included
@@ -32,7 +32,7 @@ Only the part of the file that matches the given pattern will be included
 **Embed the full file by omitting the regex pattern**
 
 ```markdown
-[embedmd]:# (pathOrURL language)
+[embed]:# (pathOrURL language)
 ```
 
 After you made changes to your documents, use the new CLI command to process all `*.md` files in the current directory.
@@ -46,4 +46,4 @@ composer embed-files
 
 ## Thanks
 
-* @campoy for [campoy/embedmd](https://github.com/campoy/embedmd) which was a huge inspiration.
+* @campoy for [campoy/embed](https://github.com/campoy/embed) which was a huge inspiration.

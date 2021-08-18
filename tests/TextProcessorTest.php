@@ -22,7 +22,7 @@ class TextProcessorTest extends MockeryTestCase
         $sut = new TextProcessor(__DIR__);
         $definition = new Definition(
             <<<MATCH
-[embedmd]:# ({$definition})
+[embed]:# ({$definition})
 ```php
 // existing code
 ```
@@ -41,7 +41,7 @@ MATCH
             $definition,
             <<<MARKDOWN
 ## Only file
-[embedmd]:# ({$definition})
+[embed]:# ({$definition})
 ```php
 // existing code
 ```
@@ -53,7 +53,7 @@ MARKDOWN
             ,
             <<<MARKDOWN
 ## Only file
-[embedmd]:# (./files/embedme.php)
+[embed]:# (./files/embedme.php)
 ```php
 {$embedmePhp}
 ```
@@ -71,7 +71,7 @@ MARKDOWN
 
             <<<MARKDOWN
 ## Only file
-[embedmd]:# ({$definition})
+[embed]:# ({$definition})
 ```php
 // existing code
 ```
@@ -83,7 +83,7 @@ MARKDOWN
             ,
             <<<MARKDOWN
 ## Only file
-[embedmd]:# ({$definition})
+[embed]:# ({$definition})
 ```php
 function foo(){
 

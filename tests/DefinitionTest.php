@@ -30,7 +30,7 @@ class DefinitionTest extends MockeryTestCase
     public function definitions()
     {
         yield 'Everything' => [
-            '[embedmd]:# (src/DummyClass.php php somepattern)',
+            '[embed]:# (src/DummyClass.php php somepattern)',
             'src/DummyClass.php php somepattern',
             '',
             'src/DummyClass.php',
@@ -39,7 +39,7 @@ class DefinitionTest extends MockeryTestCase
         ];
 
         yield 'Only file' => [
-            '[embedmd]:# (src/DummyClass.php)',
+            '[embed]:# (src/DummyClass.php)',
             'src/DummyClass.php',
             '',
             'src/DummyClass.php',

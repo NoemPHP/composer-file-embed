@@ -1,8 +1,9 @@
 # Embed Test
 
-
 ## Complete
-[embedmd]:# (embedme.php php ^.*$)
+
+[embed]:# (embedme.php php ^.*$)
+
 ```php
 <?php
 
@@ -14,7 +15,7 @@ function foo(){
 
 
 ```## Only file
-[embedmd]:# (embedme.php)
+[embed]:# (embedme.php)
 ```php
 <?php
 
@@ -27,9 +28,10 @@ function foo(){
 
 ```
 
-
 ## Existing
-[embedmd]:# (embedme.php php)
+
+[embed]:# (embedme.php php)
+
 ```php
 <?php
 
