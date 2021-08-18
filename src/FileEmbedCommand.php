@@ -20,13 +20,15 @@ class FileEmbedCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Executing');
-        $output->writeln($this->baseDir);
+        $output->writeln([
+                             '<info>Embedding code snippets in Markdown</>',
+                             '<info>===================================</>',
+                         ]);
         /**
          * @var SplFileInfo[]
          */
         $finder = (new Finder())
-            ->in($this->baseDir.'/**')
+            ->in($this->baseDir)
             ->notPath('vendor')
             ->files()
             ->name('*.md')
@@ -52,7 +54,11 @@ class FileEmbedCommand extends BaseCommand
                     $matches['existing'][$i] ?? ''
                 );
             }
-            (new FileProcessor())->process($file->getPathname(), $file->getPathname(), ...$definitions);
+            try {
+                (new FileProcessor())->process($file->getPathname(), $file->getPathname(), ...$definitions);
+            } catch (\Throwable $e) {
+                $output->writeln('<error>'.$e->getMessage().'</error>');
+            }
         }
     }
 }
