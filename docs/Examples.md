@@ -8,6 +8,7 @@ to prevent them from disappearing in the generated document as well as to preven
 `(./embed/FooInterface.php)`
 
 [embedmd]:# (./embed/FooInterface.php)
+
 ```php
 <?php
 
@@ -47,6 +48,7 @@ interface FooInterface
 `(./embed/FooInterface.php php interface.*})`
 
 [embedmd]:# (./embed/FooInterface.php php interface.*})
+
 ```php
 interface FooInterface
 {
@@ -57,11 +59,13 @@ interface FooInterface
     public function doSomething(): void;
 }
 ```
-### Include the 'Thanks' section via regex matching
+
+### Include the 'Thanks' section of the README.md
 
 `(./README.md markdown ##\sThanks.*$)`
 
 [embedmd]:# (./README.md markdown ##\sThanks.*$)
+
 ```markdown
 ## Thanks
 
