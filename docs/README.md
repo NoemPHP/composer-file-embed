@@ -10,7 +10,7 @@ Install this package via composer:
 
 ## Usage
 
-The plugin parses Marddown's ["hidden link syntax"](https://stackoverflow.com/a/20885980) which can otherwise used for
+The plugin parses Markdown's ["hidden link syntax"](https://stackoverflow.com/a/20885980) which can otherwise used for
 comments, in a custom format. This allows us to define embeds without these definitions showing up in the generated
 output. The following formats are all valid, so in case your markdown processor trips over one, you can try a different
 format:
