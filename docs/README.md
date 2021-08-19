@@ -12,10 +12,15 @@ Install this package via composer:
 
 The plugin parses Marddown's ["hidden link syntax"](https://stackoverflow.com/a/20885980) which can otherwise used for
 comments, in a custom format. This allows us to define embeds without these definitions showing up in the generated
-output. The format is as follows:
+output. The following formats are all valid, so in case your markdown processor trips over one, you can try a different
+format:
 
 ```markdown
 [embed]:# (path: filepathOrURL, lang: language, match: '[a-zA-Z]')
+
+[embed]:<> (path: filepathOrURL, lang: language, match: '[a-zA-Z]')
+
+[embed]:# "path: filepathOrURL, lang: language, match: '[a-zA-Z]'"
 ```
 
 The config inside the parentheses is actually an inline YAML string, so commas and spaces are important. Don't forget to
@@ -37,6 +42,16 @@ In your project directory, run:
 
 ```shell
 composer embed-files
+```
+
+## Notes
+
+**When using Jekyll / GH-Pages**, the comment markup can break if you use quotes in your YAML. Try a different format
+then. For example, if you need to pass a single-quoted regex pattern, the use of double quotes in the comment is known
+to work:
+
+```markdown
+[embed]:# "path: ./foo.md, match: '##\sThanks.*$'"
 ```
 
 ## Thanks
