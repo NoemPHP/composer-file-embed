@@ -13,6 +13,9 @@ gh_edit_repository: https://github.com/NoemPHP/composer-file-embed # Your repo G
 gh_edit_branch: master # The default branch of the repo. Default: main
 gh_edit_source: docs # The directory containing the docs. Default: docs
 
+kramdown:
+    smart_quotes: [ "apos", "apos", "quot", "quot" ]
+
 remote_theme: pmarsceill/just-the-docs
 
 
