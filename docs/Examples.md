@@ -8,6 +8,7 @@ prevent them from disappearing in the generated document as well as to prevent t
 `(path: ./embed/FooInterface.php)`
 
 [embed]:# (path: ./embed/FooInterface.php)
+
 ```php
 <?php
 
@@ -41,11 +42,13 @@ interface FooInterface
 }
 
 ```
+
 ### Include only the actual interface definition of the file above
 
 `(path: ./embed/FooInterface.php, match: "interface.*}")`
 
-[embed]:# (path: ./embed/FooInterface.php, match: "interface.*}")
+[embed]:<> (path: ./embed/FooInterface.php, match: "interface.*}")
+
 ```php
 interface FooInterface
 {
@@ -62,6 +65,7 @@ interface FooInterface
 `(path: ./README.md, match: '##\sThanks.*$')`
 
 [embed]:# (path: ./README.md, match: '##\sThanks.*$')
+
 ```markdown
 ## Thanks
 
