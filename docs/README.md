@@ -54,7 +54,8 @@ composer embed-files
 
 ## Notes
 
-**When using Jekyll / GH-Pages**, the comment markup can break if you use quotes in your YAML. Try a different format
+**When using Jekyll / GH-Pages**, the comment markup can break if you use quotes in your YAML. The result is that
+the `[embed]` definition is visible on GH Pages despite not being rendered on GitHub itself. Try a different format
 then. For example, if you need to pass a single-quoted regex pattern, the use of double quotes in the comment is known
 to work:
 
