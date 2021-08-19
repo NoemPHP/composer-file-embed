@@ -8,7 +8,6 @@ prevent them from disappearing in the generated document as well as to prevent t
 `(path: ./embed/FooInterface.php)`
 
 [embed]:# (path: ./embed/FooInterface.php)
-
 ```php
 <?php
 
@@ -65,7 +64,6 @@ interface FooInterface
 `(path: ./README.md, match: '##\sThanks.*$')`
 
 [embed]:# (path: ./README.md, match: '##\sThanks.*$')
-
 ```markdown
 ## Thanks
 
