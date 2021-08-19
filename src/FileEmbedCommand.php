@@ -45,11 +45,11 @@ class FileEmbedCommand extends BaseCommand
             ->contains('/\[embed]:# \(/');
 
         foreach ($finder as $file) {
-            $output->writeln('Processing ' . $file->getPathname());
+            $output->writeln('Processing '.$file->getPathname());
 
             $matches = [];
             preg_match_all(
-                '/\[embed]:\s*?(#|(<>))\s*?[\("](?<definition>[^\n`]*?)[\)"]\n(?<existing>```.*?```)?/ms',
+                '/\[embed]:\s*?(#|(<>))\s*?[\("](?<definition>[^\n`]*?)[\)"]\n+(?<existing>```.*?```)?/ms',
                 $file->getContents(),
                 $matches
             );
@@ -67,7 +67,7 @@ class FileEmbedCommand extends BaseCommand
             try {
                 (new FileProcessor())->process($file->getPathname(), $file->getPathname(), ...$definitions);
             } catch (\Throwable $e) {
-                $output->writeln('<error>' . $e->getMessage() . '</error>');
+                $output->writeln('<error>'.$e->getMessage().'</error>');
             }
         }
     }
