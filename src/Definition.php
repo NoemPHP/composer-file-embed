@@ -53,13 +53,12 @@ class Definition
 }
 JSON;
 
-        $config = Yaml::parse('{'.$this->definition.'}');
+        $config = Yaml::parse('{' . $this->definition . '}');
         $validator = new Validator();
         $validator->validate(
             $config,
             json_decode($this->schema),
             Constraint::CHECK_MODE_TYPE_CAST | Constraint::CHECK_MODE_EXCEPTIONS
-
         );
         $this->file = $config['path'];
         $this->language = $config['lang'] ?? $this->determineLanguage($this->file);
