@@ -27,7 +27,9 @@ class TextProcessorTest extends MockeryTestCase
 // existing code
 ```
 MATCH
-            , $definition, ''
+            ,
+            $definition,
+            ''
         );
         $result = $sut->process($definition, $input);
         $this->assertSame($expectedOutput, $result);
@@ -36,7 +38,7 @@ MATCH
     public function textInput()
     {
         $embedmePhp = file_get_contents(__DIR__.'/files/embedme.php');
-        $definition = './files/embedme.php';
+        $definition = 'path: ./files/embedme.php';
         yield 'simple' => [
             $definition,
             <<<MARKDOWN
@@ -53,7 +55,7 @@ MARKDOWN
             ,
             <<<MARKDOWN
 ## Only file
-[embed]:# (./files/embedme.php)
+[embed]:# ($definition)
 ```php
 {$embedmePhp}
 ```
@@ -64,11 +66,10 @@ MARKDOWN
 MARKDOWN
             ,
         ];
-        $definition = './files/embedme.php php function.*}';
+        $definition = 'path: ./files/embedme.php, lang: php, match: "function.*}"';
 
         yield 'with pattern' => [
             $definition,
-
             <<<MARKDOWN
 ## Only file
 [embed]:# ({$definition})

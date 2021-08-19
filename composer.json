@@ -12,7 +12,9 @@
     ],
     "require": {
         "composer-plugin-api": "^2.0",
-        "symfony/finder": "^5.3"
+        "symfony/finder": "^5.3",
+        "symfony/yaml": "^5.3",
+        "justinrainbow/json-schema": "^5.2"
     },
     "require-dev": {
         "composer/composer": "^2.0",

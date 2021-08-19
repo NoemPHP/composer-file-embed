@@ -10,30 +10,25 @@ Install this package via composer:
 
 ## Usage
 
-The plugin parses ["hidden link syntax"](https://stackoverflow.com/a/20885980) in a custom format. This allows us to
-define embeds without these definitions showing up in the generated output. The format is as follows:
-
-**Embed a complete file by only specifying the file path**
-
-```markdown
-[embed]:# (pathOrURL language)
-```
-
-The language used for syntax highlighting will be chosen based on the file extension
-
-**Full example - with language and regex pattern**
+The plugin parses Marddown's ["hidden link syntax"](https://stackoverflow.com/a/20885980) which can otherwise used for
+comments, in a custom format. This allows us to define embeds without these definitions showing up in the generated
+output. The format is as follows:
 
 ```markdown
-[embed]:# (pathOrURL language /match regexp/)
+[embed]:# (path: filepathOrURL, lang: language, match: '[a-zA-Z]')
 ```
 
-Only the part of the file that matches the given pattern will be included
+The config inside the parentheses is actually an inline YAML string, so commas and spaces are important. Don't forget to
+quote your config when encessary. Only the `path` is required.
 
-**Embed the full file by omitting the regex pattern**
+|Key|Type|Required|Example|Comment  |
+|---|---|---|---|---|
+|path|`string` | yes | `./src/MyClass.php`| Path or URL to the text you want to embed |
+|lang|`string`| no | `php` | Specify the language in case in it cannot be (correctly) identified |
+|match|`string`| no | `class.*}` | Include only the matching parts of the specified file |
 
-```markdown
-[embed]:# (pathOrURL language)
-```
+[Check out the Examples page](https://noemphp.github.io/composer-file-embed/Examples/) for more detailed examples and
+use-cases.
 
 After you made changes to your documents, use the new CLI command to process all `*.md` files in the current directory.
 It will recurse into subdirectories, but exclude the `vendor/` folder.

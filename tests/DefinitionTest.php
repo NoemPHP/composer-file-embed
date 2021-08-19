@@ -29,22 +29,41 @@ class DefinitionTest extends MockeryTestCase
 
     public function definitions()
     {
+        $definition = 'path: src/DummyClass.php, lang: php, match: somepattern';
         yield 'Everything' => [
-            '[embed]:# (src/DummyClass.php php somepattern)',
-            'src/DummyClass.php php somepattern',
+            "[embed]:# ($definition)",
+            $definition,
             '',
             'src/DummyClass.php',
             'php',
             "\034somepattern\034",
         ];
-
+        $definition = 'path: src/DummyClass.php';
         yield 'Only file' => [
-            '[embed]:# (src/DummyClass.php)',
-            'src/DummyClass.php',
+            "[embed]:# ($definition)",
+            $definition,
             '',
             'src/DummyClass.php',
             'php',
             "\034^.*$\034",
+        ];
+        $definition = 'path: src/DummyClass.php, match: \'##\sThanks.*$\'';
+        yield 'Complex regex' => [
+            "[embed]:# ($definition)",
+            $definition,
+            '',
+            'src/DummyClass.php',
+            'php',
+            "\034##\sThanks.*$\034",
+        ];
+        $definition = 'path: src/DummyClass, match: \'##\sThanks.*$\'';
+        yield 'No file extension' => [
+            "[embed]:# ($definition)",
+            $definition,
+            '',
+            'src/DummyClass',
+            '',
+            "\034##\sThanks.*$\034",
         ];
     }
 }

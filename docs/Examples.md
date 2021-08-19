@@ -5,9 +5,9 @@ prevent them from disappearing in the generated document as well as to prevent t
 
 ### Include a full php file with automatic syntax highlighting
 
-`(./embed/FooInterface.php)`
+`(path: ./embed/FooInterface.php)`
 
-[embed]:# (./embed/FooInterface.php)
+[embed]:# (path: ./embed/FooInterface.php)
 ```php
 <?php
 
@@ -41,12 +41,11 @@ interface FooInterface
 }
 
 ```
-
 ### Include only the actual interface definition of the file above
 
-`(./embed/FooInterface.php php interface.*})`
+`(path: ./embed/FooInterface.php, match: "interface.*}")`
 
-[embed]:# (./embed/FooInterface.php php interface.*})
+[embed]:# (path: ./embed/FooInterface.php, match: "interface.*}")
 ```php
 interface FooInterface
 {
@@ -60,9 +59,9 @@ interface FooInterface
 
 ### Include the 'Thanks' section of the README.md
 
-`(./README.md markdown ##\sThanks.*$)`
+`(path: ./README.md, match: '##\sThanks.*$')`
 
-[embed]:# (./README.md markdown ##\sThanks.*$)
+[embed]:# (path: ./README.md, match: '##\sThanks.*$')
 ```markdown
 ## Thanks
 

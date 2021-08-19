@@ -2,11 +2,11 @@
 
 ## Complete
 
-[embed]:# (embedme.php php ^.*$)
+[embed]:# (path: embedme.php, lang: php, match: ^.*$)
 
 ## Only file
 
-[embed]:# (embedme.php)
+[embed]:# (path: embedme.php)
 
 ```
 php
@@ -15,7 +15,7 @@ huhu
 
 ## Existing
 
-[embed]:# (embedme.php php)
+[embed]:# (path: embedme.php, lang: php)
 
 ```
 php
