@@ -47,7 +47,6 @@ interface FooInterface
 `(path: ./embed/FooInterface.php, match: interface.*})`
 
 [embed]:# (path: ./embed/FooInterface.php, match: interface.*})
-
 ```php
 interface FooInterface
 {
@@ -57,6 +56,7 @@ interface FooInterface
      */
     public function doSomething(): void;
 }
+
 ```
 
 ### Include the 'Thanks' section of the README.md
