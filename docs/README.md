@@ -30,7 +30,15 @@ quote your config when encessary. Only the `path` is required.
 |---|---|---|---|---|
 |path|`string` | yes | `./src/MyClass.php`| Path or URL to the text you want to embed |
 |lang|`string`| no | `php` | Specify the language in case in it cannot be (correctly) identified |
-|match|`string`| no | `class.*}` | Include only the matching parts of the specified file |
+|match|`string`| no | `class.*}` | Include only the matching parts of the specified file. Default: `^.*$` |
+
+Since only the `path` is required, you can simply do
+
+```markdown
+[embed]:# (path: path/to/file.php)
+```
+
+...to embed a full file.
 
 [Check out the Examples page](https://noemphp.github.io/composer-file-embed/Examples/) for more detailed examples and
 use-cases.
