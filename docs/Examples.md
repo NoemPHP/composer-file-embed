@@ -63,8 +63,7 @@ interface FooInterface
 
 `(path: ./README.md, match: '##\sThanks.*$')`
 
-[embed]:# "path: ./README.md, match: '##\sThanks.*$'"
-
+[embed]:# (path: ./README.md, match: '##\sThanks.*$')
 ```markdown
 ## Thanks
 

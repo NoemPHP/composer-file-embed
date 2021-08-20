@@ -43,7 +43,7 @@ class FileEmbedCommand extends BaseCommand
             ->files()
             ->name('*.md')
             ->contains('/\[embed]:\s*?(#|(<>))/');
-        
+
         foreach ($finder as $file) {
             $output->writeln('Processing ' . $file->getPathname());
 
