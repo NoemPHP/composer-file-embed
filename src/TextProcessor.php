@@ -22,7 +22,7 @@ class TextProcessor
     private function createSearch(Definition $definition): string
     {
         return sprintf(
-            '/\[embed]:#\s*\(%s\)\n(\n*?```.*?```)?/ms',
+            '/\[embed]:\s*?(#|(<>))\s*?[\("]%s[\)"]\n+(```.*?```)?/ms',
             preg_quote($definition->definition, '/')
         );
     }
