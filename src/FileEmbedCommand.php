@@ -28,9 +28,9 @@ class FileEmbedCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln([
-                             '<info>Embedding code snippets in Markdown</>',
-                             '<info>===================================</>',
-                         ]);
+            '<info>Embedding code snippets in Markdown</>',
+            '<info>===================================</>',
+        ]);
         /**
          * @var SplFileInfo[]
          */
@@ -49,7 +49,7 @@ class FileEmbedCommand extends BaseCommand
 
             $matches = [];
             preg_match_all(
-                '/\[embed]:\s*?(#|(<>))\s*?[\("](?<definition>[^\n`]*?)[\)"]\n+(?<existing>```.*?```)?/ms',
+                '/(?<rawEmbed>\[embed]:\s*?(#|(<>))\s*?[\("](?<definition>[^\n`]*?)[\)"])\n+(?<existing>```.*?```)?/ms',
                 $file->getContents(),
                 $matches
             );
@@ -60,6 +60,7 @@ class FileEmbedCommand extends BaseCommand
             foreach ($matches[0] as $i => $fullMatch) {
                 $definitions[] = new Definition(
                     $fullMatch,
+                    $matches['rawEmbed'][$i] ?? '',
                     $matches['definition'][$i] ?? '',
                     $matches['existing'][$i] ?? ''
                 );

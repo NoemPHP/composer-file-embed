@@ -22,8 +22,8 @@ class TextProcessor
     private function createSearch(Definition $definition): string
     {
         return sprintf(
-            '/\[embed]:\s*?(#|(<>))\s*?[\("]%s[\)"]\n+(```.*?```)?/ms',
-            preg_quote($definition->definition, '/')
+            '/%s\n+(```.*?```)?/ms',
+            preg_quote($definition->rawEmbed, '/')
         );
     }
 
@@ -39,7 +39,7 @@ class TextProcessor
         $embedContent = $matches[0];
 
         return <<<MARKDOWN
-[embed]:# ({$definition->definition})
+{$definition->rawEmbed}
 ```{$definition->language}
 {$embedContent}
 ```

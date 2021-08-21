@@ -30,16 +30,18 @@ class Definition
 
     public function __construct(
         public string $fullMatch,
+        public string $rawEmbed,
         public string $definition,
         public string $existing
-    ) {
+    )
+    {
         $this->schema = <<<'JSON'
 {
     "type": "object",
     "required": [
         "path"
     ],
-    "propertiesroperties": {
+    "properties": {
         "path": {
              "type": "string"
         },

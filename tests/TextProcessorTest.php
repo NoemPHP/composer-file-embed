@@ -16,9 +16,11 @@ class TextProcessorTest extends MockeryTestCase
      */
     public function testProcess(
         string $definition,
+        string $rawEmbed,
         string $input,
         string $expectedOutput
-    ) {
+    )
+    {
         $sut = new TextProcessor(__DIR__);
         $definition = new Definition(
             <<<MATCH
@@ -28,6 +30,7 @@ class TextProcessorTest extends MockeryTestCase
 ```
 MATCH
             ,
+            $rawEmbed,
             $definition,
             ''
         );
@@ -37,13 +40,15 @@ MATCH
 
     public function textInput()
     {
-        $embedmePhp = file_get_contents(__DIR__.'/files/embedme.php');
+        $embedmePhp = file_get_contents(__DIR__ . '/files/embedme.php');
         $definition = 'path: ./files/embedme.php';
+        $rawEmbed = "[embed]:# ({$definition})";
         yield 'simple' => [
             $definition,
+            $rawEmbed,
             <<<MARKDOWN
 ## Only file
-[embed]:# ({$definition})
+{$rawEmbed}
 ```php
 // existing code
 ```
@@ -55,7 +60,7 @@ MARKDOWN
             ,
             <<<MARKDOWN
 ## Only file
-[embed]:# ($definition)
+$rawEmbed
 ```php
 {$embedmePhp}
 ```
@@ -66,10 +71,41 @@ MARKDOWN
 MARKDOWN
             ,
         ];
+        $rawEmbed = "[embed]:# \"{$definition}\"";
+        yield 'differing syntax' => [
+            $definition,
+            $rawEmbed,
+            <<<MARKDOWN
+## Only file
+[embed]:# "{$definition}"
+```php
+// existing code
+```
+## This is left untouched
+```php
+// existing code
+```
+MARKDOWN
+            ,
+            <<<MARKDOWN
+## Only file
+[embed]:# "$definition"
+```php
+{$embedmePhp}
+```
+## This is left untouched
+```php
+// existing code
+```
+MARKDOWN
+            ,
+        ];
+
         $definition = 'path: ./files/embedme.php, lang: php, match: "function.*}"';
 
         yield 'with pattern' => [
             $definition,
+            "[embed]:# ({$definition})",
             <<<MARKDOWN
 ## Only file
 [embed]:# ({$definition})
