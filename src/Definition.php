@@ -33,8 +33,7 @@ class Definition
         public string $rawEmbed,
         public string $definition,
         public string $existing
-    )
-    {
+    ) {
         $this->schema = <<<'JSON'
 {
     "type": "object",
