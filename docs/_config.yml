@@ -16,8 +16,7 @@ gh_edit_source: docs # The directory containing the docs. Default: docs
 kramdown:
     smart_quotes: [ "apos", "apos", "quot", "quot" ]
 
-remote_theme: pmarsceill/just-the-docs
-
+remote_theme: just-the-docs/just-the-docs
 
 plugins:
     - jekyll-remote-theme
