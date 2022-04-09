@@ -71,4 +71,5 @@ class FileEmbedCommand extends BaseCommand
             }
         }
     }
+    return 0;
 }
