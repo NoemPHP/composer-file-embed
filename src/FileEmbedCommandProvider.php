@@ -8,7 +8,6 @@ use Composer\Plugin\Capability\CommandProvider;
 
 class FileEmbedCommandProvider implements CommandProvider
 {
-
     public function getCommands()
     {
         return [

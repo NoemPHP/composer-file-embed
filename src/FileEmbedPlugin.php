@@ -17,7 +17,6 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 
 class FileEmbedPlugin implements PluginInterface, Capable
 {
-
     public function activate(Composer $composer, IOInterface $io)
     {
     }

@@ -10,7 +10,6 @@ use Symfony\Component\Yaml\Yaml;
 
 class Definition
 {
-
     /**
      * @readonly
      */

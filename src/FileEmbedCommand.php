@@ -14,7 +14,6 @@ use Symfony\Component\Finder\SplFileInfo;
 
 class FileEmbedCommand extends BaseCommand
 {
-
     public function __construct(private string $baseDir)
     {
         parent::__construct('embed-files');

@@ -6,7 +6,6 @@ namespace Noem\Composer;
 
 class TextProcessor
 {
-
     private string $baseDir;
 
     public function __construct(string $baseDir)

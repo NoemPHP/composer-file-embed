@@ -6,7 +6,6 @@ namespace Noem\Composer;
 
 class DefinitionValidator
 {
-
     public function __construct()
     {
     }
