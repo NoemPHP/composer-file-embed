@@ -70,6 +70,6 @@ class FileEmbedCommand extends BaseCommand
                 $output->writeln('<error>' . $e->getMessage() . '</error>');
             }
         }
+        return 0;
     }
-    return 0;
 }
