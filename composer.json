@@ -13,7 +13,7 @@
     "require": {
         "composer-plugin-api": "^2.0",
         "symfony/finder": "^7.1",
-        "symfony/yaml": "^7.4",
+        "symfony/yaml": "^7.2",
         "justinrainbow/json-schema": "^5.2"
     },
     "require-dev": {
